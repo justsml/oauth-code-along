@@ -1,0 +1,21 @@
+html
+  head
+    title OAuth Code Along
+  body
+    header
+      h1 Dan's OAuth Code-along
+
+    section
+      ul
+        li: a(href='/auth/twitter') Login to Twitter
+        li: a(href='/auth/facebook') Login to Facebook
+        li: a(href='/auth/google') Login to Google
+        li: a(href='/auth/github') Login to Github
+
+    section
+      if !user
+        h2 Not logged in
+      else
+        pre
+          code
+            = JSON.stringify(user)
