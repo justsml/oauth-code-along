@@ -1,5 +1,7 @@
 # OAuth Code Along
 
+> Links provided to setup OAuth keys in Objectives Section.
+
 
 ### Objectives
 
@@ -9,7 +11,7 @@
 1. Setup [express bits](https://github.com/justsml/guides/blob/master/express/app.js)
   * Run `npm install express express-session body-parser morgan cors passport passport-github passport-twitter`
 1. Setup Passport & routes
-1.
+1. Profit!
 
 ### References/Resources
 
