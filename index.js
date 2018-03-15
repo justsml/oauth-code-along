@@ -1,6 +1,7 @@
 const http            = require('http')
 const express         = require('express')
 const session         = require('express-session')
+const FileStore       = require('session-file-store')(session);
 const passport        = require('passport')
 const TwitterStrategy = require('passport-twitter').Strategy;
 const bodyParser      = require('body-parser')
@@ -20,11 +21,21 @@ passport.use(new TwitterStrategy({
     callbackURL: "http://localhost:3000/auth/twitter/callback"
   },
   function(token, tokenSecret, profile, done) {
-    console.log('AUTH HANDLED:', arguments)
+
+    // knex('users').where({id: profile.id})
+    // .then(results => {
+    //   if (results.length < 1) {
+    //     // create
+    //   } else {
+    //     return done(null, results[0])
+    //   }
+    // })
     let user = users.find(u => u.id === profile.id)
     if (!user) {
-      users.push({id: profile.id, username: profile.username})
+      user = {id: profile.id, username: profile.username}
+      users.push(user)
     }
+    console.log('AUTH DONE:', user)
     done(null, user)
     // User.findOrCreate(..., function(err, user) {
     //   if (err) { return done(err); }
@@ -34,12 +45,12 @@ passport.use(new TwitterStrategy({
 ));
 
 passport.serializeUser(function(user, done) {
-  console.log('serializeUser: ' + user._id)
-  done(null, user._id);
+  console.log('serializeUser: ', user)
+  done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  console.log('deserializeUser: ' + user._id)
+  console.log('deserializeUser: ' + id)
   let user = users.find(u => u.id === id)
   if (!user) { done(new Error('User not found! ' + id))}
   done(null, user)
@@ -55,7 +66,8 @@ app.use(cors({origin: true}))
 app.use(session({
   secret: 'bquyqueajhbd',
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  store: new FileStore({path: '/tmp/session'})
 }));
 app.use(passport.initialize())
 app.use(passport.session())

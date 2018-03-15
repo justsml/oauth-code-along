@@ -21,6 +21,27 @@
 * Setup Passport & routes
 * Profit!
 
+#### Part 2
+
+> Review code from part 1
+> Then Make it do The Thing™
+
+* Describe at least 4 critical parts of an Express+Passport app
+  * 3 minutes to review code
+  * Write short notes on slates/desks.
+    * serialize/deserialize
+    * in memory data for `users`
+    * Authorization - restricting routes
+    * Passport startegy & middleware
+    * Passport routes & callback
+
+* Why is session critical?
+  * Turn & talk
+* Describe in own words issue w/ session (and fix it)
+  * Turn & talk
+
+
+
 ### References/Resources
 
 1. Dan's Express App Template: https://github.com/justsml/guides/blob/master/express/app.js
