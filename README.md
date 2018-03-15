@@ -6,7 +6,7 @@
 
 * Part 1: https://youtu.be/uPLEy92Njhc
   * [End of lesson commit](https://github.com/justsml/oauth-code-along/commit/344a83101e2297388c886dec00c935db574d1ef3)
-* Part 2: ... coming soon
+* Part 2: https://youtu.be/L-xSrBekKdk
 
 ### Objectives
 
