@@ -44,6 +44,6 @@
 
 ### References/Resources
 
-1. Dan's Express App Template: https://github.com/justsml/guides/blob/master/express/app.js
-1. Social auth snippets: https://medium.com/@tkssharma/authentication-using-passport-js-social-auth-with-node-js-1e1ec7086ded
+1. [Dan's Express App Template](https://github.com/justsml/guides/blob/master/express/app.js)
+1. [Social auth snippets](https://tkssharma.com/authentication-using-passport-social-auth-with-nodejs/)
 
